@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Exercises {
-
+	 
 	public int findMe(int[] list, int target) {
 		if (list == null) {
 			return -1;
-		}
+		} 
 			
 		for (int i = 0; i < list.length; i++) {
 			if (list[i] == target) {
@@ -25,20 +26,39 @@ public class Exercises {
 			if (list.get(i).equals(target)) {
 				return i;
 			}
-		}
+		} 
 	   
 	  return -1;  
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
-	if (list == null) {
+	if (list == null || list.size() == 0) {
 		return -1; 
 	}
 	
-	if (target > list.get(list.size() / 2)) {
-		
-	}
+	int lower = 0;
+	int upper = list.size() - 1;
+	int mid = list.size() / 2; 
 	
+	while  (lower <= upper) {
+		if (target == list.get(lower)) {
+			return lower;
+		} 
+		
+		if	(target == list.get(upper)) {
+			return upper;
+		}
+		
+		if (target > list.get(mid)) {
+			lower = mid;
+			mid = (lower + upper) / 2;
+		} else if (target < list.get(mid)) {
+			upper = mid;
+			mid = (lower + upper) / 2;
+		} else {
+			return mid;
+		}
+		}
     return -1;
   }
 
