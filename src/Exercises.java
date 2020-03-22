@@ -141,8 +141,8 @@ public class Exercises {
 		return list;  
   	}
 
-  public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-	  if (list == null) {
+	public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
+		if (list == null) {
 			return null;
 		}
 		
@@ -160,10 +160,10 @@ public class Exercises {
 			}
 		}
 		return list;  
-  }
+  	}
 
-  public String[] insertion(String[] list, boolean ascending) {
-	  if (list == null) {
+  	public String[] insertion(String[] list, boolean ascending) {
+  		if (list == null) {
 			return null;
 		}
 		
@@ -180,7 +180,8 @@ public class Exercises {
 				}
 			}
 		}
-		return list;    }
+			return list;    
+	  }
 
   public int[] selection(int[] list, boolean ascending) {
     return null;
