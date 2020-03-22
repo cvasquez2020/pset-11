@@ -51,31 +51,32 @@ public class Exercises {
 				return mid;
 			}
 		}
-	    return -1;
+	    
+		return -1;
 	}
 
-  public int findMeFaster(String[] list, String target) {
-	  if (list == null || list.length == 0) {
+	public int findMeFaster(String[] list, String target) {
+		if (list == null || target.equals(null)) {
 			return -1; 
 		}
 		
 		int lower = 0;
-		int upper = list.length - 1;
-		int mid = list.length / 2;
+		int upper = list.length;
+		int mid = 0;
+
+		while  (lower <= upper) {
+			mid = (lower + upper) / 2;
 		
-		while  (lower < mid) {
-			
 			if (0 > list[mid].compareTo(target)) {
-				lower = mid;
-				mid = (lower + upper) / 2;
+				lower = mid + 1;	
 			} else if (0 < list[mid].compareTo(target)) {
-				upper = mid;
-				mid = (lower + upper) / 2;
-			} else if (0 == list[mid].compareTo(target)) {
+				upper = mid - 1;
+			} else if (list[mid].equals(target)) {
 				return mid;
 			}
 		}
-	    return -1;
+	    
+		return -1;
   }
 
   public int[] bubble(int[] list, boolean ascending) {
