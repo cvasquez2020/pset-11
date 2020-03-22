@@ -16,19 +16,19 @@ public class Exercises {
 			return -1;
 	}
 
-  public int findMe(ArrayList<String> list, String target) {
-	  if (list == null) {
+	public int findMe(ArrayList<String> list, String target) {
+		if (list == null) {
 			return -1;
-	  }
-		
-	  for (int i = 0; i < list.size(); i++) {
+		}
+			
+		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).equals(target)) {
 				return i;
 			}
 		} 
-	   
-	  return -1;  
-  }
+		   
+		  return -1;  
+	}
 
 	public int findMeFaster(ArrayList<Integer> list, int target) {
 		if (list == null) {
@@ -77,11 +77,38 @@ public class Exercises {
 		}
 	    
 		return -1;
-  }
+	}
 
-  public int[] bubble(int[] list, boolean ascending) {
-    return null;
-  }
+	public int[] bubble(int[] list, boolean ascending) {
+		if (list == null) {
+			return null;
+		}
+		
+		Boolean sorted = false;
+		
+		while (!sorted) {
+			sorted = true;
+			
+			for (int i = 0; i < list.length - 1; i++) {
+				if (ascending) {
+					if (list[i] > list[i + 1]) {
+						int temp = list[i];
+						list[i] = list[i + 1];
+						list[i + 1] = temp;
+						sorted = false;
+					} 
+				} else {
+					if (list[i] < list[i + 1]) {
+						int temp = list[i];
+						list[i] = list[i + 1];
+						list[i + 1] = temp;
+						sorted = false;
+					} 
+				}
+			}
+		}
+		return list;
+	}
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
     return null;
