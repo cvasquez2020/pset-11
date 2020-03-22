@@ -14,7 +14,7 @@ public class Exercises {
 			}
 		}
 			
-		    return -1;
+			return -1;
 	}
 
   public int findMe(ArrayList<String> list, String target) {
@@ -58,12 +58,39 @@ public class Exercises {
 		} else {
 			return mid;
 		}
-		}
+	}
     return -1;
   }
 
   public int findMeFaster(String[] list, String target) {
-    return -1;
+	  if (list == null || list.length == 0) {
+			return -1; 
+		}
+		
+		int lower = 0;
+		int upper = list.length - 1;
+		int mid = list.length / 2; 
+		
+		while  (lower <= upper) {
+			if (target.equals(list[lower])) {
+				return lower;
+			} 
+			
+			if	(target == list[upper]) {
+				return upper;
+			}
+			
+			if (target > list[mid]) {
+				lower = mid;
+				mid = (lower + upper) / 2;
+			} else if (target < list.get(mid)) {
+				upper = mid;
+				mid = (lower + upper) / 2;
+			} else {
+				return mid;
+			}
+		}
+	    return -1;
   }
 
   public int[] bubble(int[] list, boolean ascending) {
