@@ -15,7 +15,7 @@ public class Exercises {
         return -1;
     }
 
-    public int findMe(ArrayList < String > list, String target) {
+    public int findMe(ArrayList <String> list, String target) {
         if (list == null) {
             return -1;
         }
@@ -109,7 +109,7 @@ public class Exercises {
         return list;
     }
 
-    public ArrayList < String > bubble(ArrayList < String > list, boolean ascending) {
+    public ArrayList <String> bubble(ArrayList < String > list, boolean ascending) {
         if (list == null || (ascending != true && ascending != false)) {
             return null;
         }
