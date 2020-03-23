@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Exercises {
 	 
@@ -207,8 +208,8 @@ public class Exercises {
 		return list;
 	}
 
-  public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-	  if(list == null) {
+	public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
+		if(list == null) {
 			return null;
 		}
 		
@@ -229,11 +230,58 @@ public class Exercises {
 			}
 		}
 		return list;
-  }
+	}
 
-  public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
-    return null;
-  }
+  	public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
+  		if (list == null || list.size() < 1) {
+  			return null;	
+  		}
+  		
+  		if (list.size() == 1) {
+  			return list;
+  		} 
+  		
+  		
+  		ArrayList<Integer> right = new ArrayList<Integer>();
+  	  	ArrayList<Integer> left = new ArrayList<Integer>();
+  	  	for (int i = 0; i < list.size() / 2; i++) {
+    		left.add(list.get(i));
+		}
+  	  	
+  	  	for (int i = list.size() / 2; i < list.size(); i++) {
+  	  		right.add(list.get(i));
+  	  	}
+  		right = merge(right, ascending);
+  		left = merge(left, ascending);
+  		
+  		ArrayList<Integer> sortedList = new ArrayList<Integer>();
+  		while (right.size() != 0 && left.size() != 0) {
+  			if (ascending) {
+  			if (right.get(0) < left.get(0)) {
+  				sortedList.add(right.get(0));
+  				right.remove(0);
+  			} else {
+  				sortedList.add(left.get(0));
+  				left.remove(0);
+  			}
+  			} else {
+  				if (right.get(0) > left.get(0)) {
+  	  				sortedList.add(right.get(0));
+  	  				right.remove(0);
+  	  			} else {
+  	  				sortedList.add(left.get(0));
+  	  				left.remove(0);
+  	  			}
+  			}
+  		}
+  		if (right.size() > 0) {
+  			sortedList.addAll(right);
+  		} else if (left.size() > 0) {
+  			sortedList.addAll(left);
+  		}
+  		 		
+  		return sortedList;
+  	}
 
   public String[] merge(String[] list, boolean ascending) {
     return null;
