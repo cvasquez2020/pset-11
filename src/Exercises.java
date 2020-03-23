@@ -109,7 +109,7 @@ public class Exercises {
         return list;
     }
 
-    public ArrayList <String> bubble(ArrayList < String > list, boolean ascending) {
+    public ArrayList <String> bubble(ArrayList <String> list, boolean ascending) {
         if (list == null || (ascending != true && ascending != false)) {
             return null;
         }
@@ -207,7 +207,7 @@ public class Exercises {
         return list;
     }
 
-    public ArrayList < String > selection(ArrayList < String > list, boolean ascending) {
+    public ArrayList <String> selection(ArrayList <String> list, boolean ascending) {
         if (list == null) {
             return null;
         }
