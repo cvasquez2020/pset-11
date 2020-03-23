@@ -79,7 +79,7 @@ public class Exercises {
     }
 
     public int[] bubble(int[] list, boolean ascending) {
-        if (list == null || (ascending != true && ascending != false)) {
+        if (list == null) {
             return null;
         }
 
@@ -110,7 +110,7 @@ public class Exercises {
     }
 
     public ArrayList <String> bubble(ArrayList <String> list, boolean ascending) {
-        if (list == null || (ascending != true && ascending != false)) {
+        if (list == null) {
             return null;
         }
 
