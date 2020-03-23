@@ -140,7 +140,7 @@ public class Exercises {
         return list;
     }
 
-    public ArrayList < Integer > insertion(ArrayList < Integer > list, boolean ascending) {
+    public ArrayList <Integer> insertion(ArrayList <Integer> list, boolean ascending) {
         if (list == null) {
             return null;
         }
@@ -243,7 +243,7 @@ public class Exercises {
 
 
         ArrayList <Integer> right = new ArrayList <Integer> ();
-        ArrayList <Integer> left = new ArrayList < Integer > ();
+        ArrayList <Integer> left = new ArrayList <Integer> ();
         for (int i = 0; i < list.size() / 2; i++) {
             left.add(list.get(i));
         }
