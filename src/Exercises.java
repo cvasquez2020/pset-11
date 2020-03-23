@@ -29,7 +29,7 @@ public class Exercises {
         return -1;
     }
 
-    public int findMeFaster(ArrayList < Integer > list, int target) {
+    public int findMeFaster(ArrayList <Integer> list, int target) {
         if (list == null) {
             return -1;
         }
@@ -254,7 +254,7 @@ public class Exercises {
         right = merge(right, ascending);
         left = merge(left, ascending);
 
-        ArrayList < Integer > sortedList = new ArrayList < Integer > ();
+        ArrayList <Integer> sortedList = new ArrayList <Integer> ();
         while (right.size() != 0 && left.size() != 0) {
             if (ascending) {
                 if (right.get(0) < left.get(0)) {
