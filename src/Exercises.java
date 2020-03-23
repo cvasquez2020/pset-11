@@ -167,6 +167,7 @@ public class Exercises {
         }
 
         for (int i = 1; i < list.length; i++) {
+        	
             for (int j = i; j > 0; j--) {
                 if (ascending && 0 > list[j].compareTo(list[j - 1])) {
                     String temp = list[j - 1];
@@ -230,7 +231,7 @@ public class Exercises {
         return list;
     }
 
-    public ArrayList < Integer > merge(ArrayList < Integer > list, boolean ascending) {
+    public ArrayList <Integer> merge(ArrayList <Integer> list, boolean ascending) {
 
         if (list == null || list.size() < 1) {
             return null;
@@ -241,8 +242,8 @@ public class Exercises {
         }
 
 
-        ArrayList < Integer > right = new ArrayList < Integer > ();
-        ArrayList < Integer > left = new ArrayList < Integer > ();
+        ArrayList <Integer> right = new ArrayList <Integer> ();
+        ArrayList <Integer> left = new ArrayList < Integer > ();
         for (int i = 0; i < list.size() / 2; i++) {
             left.add(list.get(i));
         }
