@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 public class Exercises {
 
-public static int counter = 0;
 	public int findMe(int[] list, int target) {
 		if (list == null) {
 			return -1;
